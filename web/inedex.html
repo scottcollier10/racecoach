@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>RaceCoach.net – Professional Race Driving Instruction</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="RaceCoach.net – professional race driving instruction, HPDE coaching, race weekend support, and data-driven driver development." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --color-bg: #f5f6f9;
+      --color-bg-alt: #ffffff;
+      --color-hero-overlay: rgba(0, 0, 0, 0.45);
+      --color-primary: #ff8a1f;
+      --color-primary-dark: #e87409;
+      --color-accent: #1f2733;
+      --color-text: #1b252f;
+      --color-text-muted: #6a7482;
+      --color-border: #e0e4ec;
+      --shadow-soft: 0 14px 35px rgba(15, 23, 42, 0.12);
+      --radius-card: 18px;
+      --radius-pill: 999px;
+      --max-width: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font-family: inherit;
+    }
+
+    /* Layout */
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    section {
+      padding: 4rem 0;
+    }
+
+    @media (min-width: 1024px) {
+      section {
+        padding: 5rem 0;
+      }
+    }
+
+    /* Top nav + hero */
+
+    header {
+      position: relative;
+      color: #fff;
+      background: #0f1724;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 80vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background-image:
+        linear-gradient(var(--color-hero-overlay), var(--color-hero-overlay)),
+        url("images/rcdn-hero-7.jpg");
+      background-size: cover;
+      background-position: center;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 1.5rem 0.75rem;
+    }
+
+    .nav-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-family: "Montserrat", system-ui, sans-serif;
+    }
+
+    .logo-mark {
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      background: url("images/logo-40.png");
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.95rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .logo-text-main {
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      font-size: 0.96rem;
+      text-transform: uppercase;
+    }
+
+    .logo-text-sub {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      opacity: 0.85;
+      letter-spacing: 0.1em;
+    }
+
+    .nav-links {
+      display: none;
+      align-items: center;
+      gap: 1.8rem;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a {
+      opacity: 0.9;
+    }
+
+    .nav-links a:hover {
+      opacity: 1;
+    }
+
+    .nav-cta {
+      display: none;
+    }
+
+    .nav-toggle {
+      display: inline-flex;
+      background: none;
+      border: 1px solid rgba(255, 255, 255, 0.45);
+      color: inherit;
+      border-radius: 999px;
+      padding: 0.4rem 0.7rem;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    @media (min-width: 880px) {
+      .nav-links {
+        display: flex;
+      }
+      .nav-cta {
+        display: inline-flex;
+      }
+      .nav-toggle {
+        display: none;
+      }
+    }
+
+    .btn {
+      border-radius: var(--radius-pill);
+      padding: 0.75rem 1.6rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      transition: transform 0.12s ease, box-shadow 0.12s ease,
+        background-color 0.12s ease, color 0.12s ease;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: var(--color-primary);
+      color: #121212;
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.35);
+    }
+
+    .btn-primary:hover {
+      background: var(--color-primary-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    .btn-outline {
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      background: transparent;
+      color: #fff;
+    }
+
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .hero-inner {
+      flex: 1;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-content {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 3.5rem 1.5rem 4rem;
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .hero-text h1 {
+      font-family: "Montserrat", system-ui, sans-serif;
+      font-size: clamp(2.5rem, 3.4vw + 1.5rem, 3.3rem);
+      line-height: 1.08;
+      margin-bottom: 1rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      max-width: 32rem;
+      color: rgba(255, 255, 255, 0.92);
+      margin-bottom: 1.6rem;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      opacity: 0.9;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-meta span {
+      padding: 0.18rem 0.7rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.9rem;
+      margin-bottom: 1.6rem;
+    }
+
+    .hero-footnote {
+      font-size: 0.78rem;
+      opacity: 0.9;
+    }
+
+    .hero-card {
+      background: rgba(13, 21, 33, 0.8);
+      border-radius: var(--radius-card);
+      padding: 1.4rem 1.5rem;
+      max-width: 360px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .hero-card-title {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #ffddb6;
+      margin-bottom: 0.6rem;
+    }
+
+    .hero-card h3 {
+      font-family: "Montserrat", system-ui, sans-serif;
+      font-size: 1.1rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-card p {
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.86);
+      margin-bottom: 0.7rem;
+    }
+
+    .hero-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      font-size: 0.75rem;
+    }
+
+    .hero-pill {
+      padding: 0.16rem 0.6rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      opacity: 0.94;
+    }
+
+    @media (max-width: 880px) {
+      .hero-content {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .hero-card {
+        margin-top: 0.5rem;
+      }
+    }
+
+    /* Section headings */
+
+    .section-header {
+      max-width: var(--max-width);
+      margin: 0 auto 2.5rem;
+      padding: 0 1.5rem;
+    }
+
+    .section-kicker {
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.75rem;
+      color: var(--color-primary);
+      margin-bottom: 0.4rem;
+      font-weight: 600;
+    }
+
+    .section-title {
+      font-family: "Montserrat", system-ui, sans-serif;
+      font-size: 1.9rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .section-subtitle {
+      color: var(--color-text-muted);
+      max-width: 40rem;
+      font-size: 0.95rem;
+    }
+
+    /* How we coach strip */
+
+    .strip {
+      background: #111827;
+      color: #fff;
+      padding: 1.2rem 0;
+    }
+
+    .strip-inner {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.9rem;
+      font-size: 0.9rem;
+    }
+
+    .strip-label {
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      font-size: 0.7rem;
+      opacity: 0.85;
+    }
+
+    .strip-text {
+      font-family: "Montserrat", system-ui, sans-serif;
+      font-weight: 600;
+    }
+
+    /* Welcome section */
+
+    .welcome {
+      background: var(--color-bg-alt);
+    }
+
+    .welcome-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .welcome-body {
+      margin-top: 1.5rem;
+      color: var(--color-text-muted);
+      font-size: 0.98rem;
+      max-width: 46rem;
+    }
+
+    .rule {
+      width: 70px;
+      height: 3px;
+      border-radius: 999px;
+      margin: 1.1rem 0 0.8rem;
+      background: linear-gradient(90deg, var(--color-primary), transparent);
+    }
+
+    /* Why train section */
+
+    .why {
+      background: #111827;
+      color: #fff;
+    }
+
+    .why-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .why-list {
+      list-style: none;
+      display: grid;
+      gap: 0.7rem;
+      margin-top: 1.6rem;
+      font-size: 0.95rem;
+    }
+
+    .why-list li {
+      position: relative;
+      padding-left: 1.4rem;
+    }
+
+    .why-list li::before {
+      content: "—";
+      position: absolute;
+      left: 0;
+      color: var(--color-primary);
+    }
+
+    .why-list strong {
+      font-weight: 600;
+    }
+
+    /* Meet coach */
+
+    .coach {
+      background: var(--color-bg-alt);
+    }
+
+    .coach-grid {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .coach-text p {
+      color: var(--color-text-muted);
+      font-size: 0.96rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .coach-quote {
+      border-left: 3px solid var(--color-primary);
+      padding-left: 0.9rem;
+      margin-top: 0.6rem;
+      font-size: 0.9rem;
+      color: var(--color-text);
+    }
+
+    .coach-quote span {
+      display: block;
+      margin-top: 0.4rem;
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: var(--color-text-muted);
+    }
+
+    .coach-photo-wrapper {
+      border-radius: var(--radius-card);
+      overflow: hidden;
+      background: #0f172a;
+      box-shadow: var(--shadow-soft);
+      position: relative;
+    }
+
+    .coach-photo-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .coach-tag {
+      position: absolute;
+      bottom: 1rem;
+      left: 1rem;
+      background: rgba(15, 23, 42, 0.9);
+      color: #fff;
+      border-radius: var(--radius-pill);
+      padding: 0.35rem 0.9rem;
+      font-size: 0.75rem;
+    }
+
+    @media (max-width: 880px) {
+      .coach-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    /* Services */
+
+    .services {
+      background: var(--color-bg);
+    }
+
+    .services-grid {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.8rem;
+    }
+
+    .service-card {
+      background: #ffffff;
+      border-radius: var(--radius-card);
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .service-image {
+      height: 160px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .service-content {
+      padding: 1.3rem 1.4rem 1.4rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+    }
+
+    .service-title {
+      font-family: "Montserrat", system-ui, sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .service-text {
+      font-size: 0.9rem;
+      color: var(--color-text-muted);
+      flex: 1;
+    }
+
+    .service-link {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--color-primary-dark);
+    }
+
+    /* Driver profiles */
+
+    .profiles {
+      background: var(--color-bg-alt);
+    }
+
+    .profiles-grid {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1.4rem;
+    }
+
+    .profile-card {
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 1rem 1rem 1.1rem;
+      text-align: center;
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+    }
+
+    .profile-avatar {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      margin: 0 auto 0.7rem;
+      object-fit: cover;
+      background: #d4d4d8;
+    }
+
+    .profile-name {
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .profile-tag {
+      font-size: 0.8rem;
+      color: var(--color-text-muted);
+      margin-top: 0.15rem;
+    }
+
+    /* CTA band */
+
+    .cta-band {
+      background: var(--color-primary);
+      color: #111827;
+    }
+
+    .cta-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+      gap: 1.8rem;
+      align-items: center;
+    }
+
+    .cta-inner h2 {
+      font-family: "Montserrat", system-ui, sans-serif;
+      font-size: 1.8rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .cta-inner p {
+      font-size: 0.95rem;
+    }
+
+    .cta-actions {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    @media (max-width: 800px) {
+      .cta-inner {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .cta-actions {
+        justify-content: flex-start;
+      }
+    }
+
+    /* Footer */
+
+    footer {
+      background: #0b1220;
+      color: #e5e7eb;
+      padding: 2.5rem 0 2rem;
+    }
+
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      font-size: 0.9rem;
+    }
+
+    .footer-inner h3 {
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--color-primary);
+    }
+
+    .footer-meta {
+      font-size: 0.86rem;
+      color: #9ca3af;
+    }
+
+    .footer-link {
+      color: #f9fafb;
+      font-weight: 500;
+    }
+
+    .footer-small {
+      margin-top: 0.6rem;
+      font-size: 0.8rem;
+      color: #6b7280;
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+  <header id="top">
+    <div class="hero">
+      <div class="nav">
+        <div class="nav-inner">
+          <a href="#top" class="logo">
+            <div class="logo-mark"></div>
+            <div>
+              <div class="logo-text-main">RaceCoach.net</div>
+              <div class="logo-text-sub">Professional Race Driving Instruction</div>
+            </div>
+          </a>
+          <nav class="nav-links">
+            <a href="#services">Services</a>
+            <a href="#profiles">Driver Profiles</a>
+            <a href="#contact">Contact</a>
+          </nav>
+          <div class="nav-cta">
+            <a href="#booking" class="btn btn-primary">Book Today</a>
+          </div>
+          <button class="nav-toggle">Menu</button>
+        </div>
+      </div>
+
+      <div class="hero-inner">
+        <div class="hero-content">
+          <div class="hero-text">
+            <div class="hero-meta">
+              <span>HPDE • Club Racing • Race Weekends</span>
+            </div>
+            <h1>Master the Track. Elevate Your Performance.</h1>
+            <p class="hero-subtitle">
+              Precision. Speed. Strategy. One-on-one coaching that turns every
+              session into measurable progress—whether you’re chasing your
+              first clean lap or shaving tenths in traffic.
+            </p>
+            <div class="hero-actions">
+              <a href="#booking" class="btn btn-primary">Book Coaching</a>
+              <a href="#services" class="btn btn-outline">View Coaching Services</a>
+            </div>
+            <p class="hero-footnote">
+              Serving HPDE and club racers across the U.S. for over 20 years.
+            </p>
+          </div>
+
+          <aside class="hero-card">
+            <div class="hero-card-title">How We Coach</div>
+            <h3>Coach. Drive. Analyze. Excel.</h3>
+            <p>
+              Every session follows the same loop: capture the data, understand what
+              happened, and turn it into a concrete plan for your next lap.
+            </p>
+            <div class="hero-pills">
+              <span class="hero-pill">In-car &amp; out-of-car coaching</span>
+              <span class="hero-pill">Video &amp; data review</span>
+              <span class="hero-pill">Racecraft &amp; mindset</span>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="strip">
+    <div class="strip-inner container">
+      <span class="strip-label">Our Approach</span>
+      <span class="strip-text">Drive. Analyze. Elevate.</span>
+    </div>
+  </div>
+
+  <main>
+    <!-- Welcome -->
+    <section class="welcome" id="welcome">
+      <div class="welcome-inner">
+        <div class="section-header">
+          <div class="section-kicker">Welcome to RaceCoach.net</div>
+          <h2 class="section-title">Where Champions Train</h2>
+        </div>
+        <div class="welcome-body">
+          <p>
+            Racing is more than just going fast—it’s about control, repeatability,
+            and racecraft. At RaceCoach.net, coaching is tailored to
+            <strong>your</strong> car, <strong>your</strong> tracks, and
+            <strong>your</strong> goals.
+          </p>
+          <div class="rule"></div>
+          <p>
+            Founder and chief instructor <strong>Dave Scott</strong> has decades of
+            experience in professional and club racing. That real-world background
+            fuels a coaching program built to make you faster and safer on
+            <em>any</em> track, in <em>any</em> car—not just in one combo you’ve
+            memorized.
+          </p>
+          <p style="margin-top:0.8rem;">
+            Whether you’re preparing for your first HPDE, dialing in race pace for a
+            championship run, or learning how to get more out of your data and video,
+            the goal is simple: turn your time at the track into measurable
+            improvement.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why train -->
+    <section class="why">
+      <div class="why-inner">
+        <div class="section-header">
+          <div class="section-kicker">Why Train with Us?</div>
+          <h2 class="section-title">Coaching Built Around Real Drivers</h2>
+          <p class="section-subtitle">
+            No cookie-cutter programs or generic advice. Every driver gets a focused
+            plan based on where they are now and where they want to go.
+          </p>
+        </div>
+        <ul class="why-list">
+          <li><strong>Pro-Level Experience</strong> – Coaching informed by years in pro and top-level club racing.</li>
+          <li><strong>Customized Programs</strong> – Plans built around your goals, experience, and current lap data.</li>
+          <li><strong>Data-Driven Improvement</strong> – Video and telemetry to prove you’re getting faster, not just feeling quicker.</li>
+          <li><strong>Race-Proven Techniques</strong> – Braking, rotation, traffic management, and decision-making under pressure.</li>
+          <li><strong>One-on-One or Team Coaching</strong> – Work with Dave directly or bring him in to support your whole program.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Meet your coach -->
+    <section class="coach" id="coach">
+      <div class="coach-grid">
+        <div class="coach-text">
+          <div class="section-kicker">Meet Your Coach</div>
+          <h2 class="section-title" style="font-size:1.7rem;margin-bottom:0.7rem;">
+            Dave Scott – Founder &amp; Lead Coach
+          </h2>
+          <p>
+            With professional seat time in multiple series and years of HPDE and club
+            instruction, Dave has seen what separates drivers who are occasionally
+            quick from those who are consistently fast.
+          </p>
+          <p>
+            His approach blends clear, honest feedback with structured session plans
+            and simple, repeatable techniques you can use at any event. The goal
+            isn’t just a hero lap—it’s building a driver who can perform on demand.
+          </p>
+          <div class="coach-quote">
+            “Racing isn’t just about going fast—it’s about knowing
+            <em>why</em> the car did what it did, and how to make it do it again on
+            demand.”
+            <span>— Dave Scott</span>
+          </div>
+        </div>
+        <div class="coach-photo-wrapper">
+          <!-- Replace with real photo -->
+          <img src="images/dave-3.jpg"
+               alt="Coach Dave Scott" class="coach-photo" />
+          <div class="coach-tag">Based in Austin, coaching nationwide</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Coaching services -->
+    <section class="services" id="services">
+      <div class="section-header">
+        <div class="section-kicker">Coaching Services</div>
+        <h2 class="section-title">What We Offer</h2>
+        <p class="section-subtitle">
+          Choose the coaching format that matches your current season and goals.
+          All programs can be customized for individuals, co-drivers, or full teams.
+        </p>
+      </div>
+      <div class="services-grid">
+        <article class="service-card">
+          <div class="service-image" style="background-image:url('https://images.pexels.com/photos/1051074/pexels-photo-1051074.jpeg?auto=compress&cs=tinysrgb&w=1200');"></div>
+          <div class="service-content">
+            <div class="service-title">Track Day Coaching</div>
+            <p class="service-text">
+              Maximize every HPDE or open track day with structured goals, in-car
+              instruction (where permitted), and targeted post-session review.
+            </p>
+            <span class="service-link">Ideal for HPDE &amp; time-trial drivers.</span>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <div class="service-image" style="background-image:url('https://images.pexels.com/photos/210182/pexels-photo-210182.jpeg?auto=compress&cs=tinysrgb&w=1200');"></div>
+          <div class="service-content">
+            <div class="service-title">Race Weekend Support</div>
+            <p class="service-text">
+              From test days to race weekends, get help with car feedback, qualifying
+              prep, racecraft, and decision-making in traffic.
+            </p>
+            <span class="service-link">Built for club &amp; pro-am racers.</span>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <div class="service-image" style="background-image:url('https://images.pexels.com/photos/1149137/pexels-photo-1149137.jpeg?auto=compress&cs=tinysrgb&w=1200');"></div>
+          <div class="service-content">
+            <div class="service-title">Performance Assessments</div>
+            <p class="service-text">
+              A focused 1–2 day program to baseline your current skills, identify
+              where lap time is left on the table, and build a plan for your next
+              season.
+            </p>
+            <span class="service-link">Great mid-season or pre-season reset.</span>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <div class="service-image" style="background-image:url('https://images.pexels.com/photos/1181400/pexels-photo-1181400.jpeg?auto=compress&cs=tinysrgb&w=1200');"></div>
+          <div class="service-content">
+            <div class="service-title">Telemetry &amp; Video Review</div>
+            <p class="service-text">
+              Remote or at-track analysis of your data and video to sharpen braking,
+              line choice, and throttle application—between events or during big
+              race weeks.
+            </p>
+            <span class="service-link">Works with common data/video platforms.</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Driver profiles -->
+    <section class="profiles" id="profiles">
+      <div class="section-header">
+        <div class="section-kicker">Drivers We Work With</div>
+        <h2 class="section-title">From First HPDE to Podium Hunts</h2>
+        <p class="section-subtitle">
+          RaceCoach.net builds programs around where you are now—and where you want
+          to be next season.
+        </p>
+      </div>
+      <div class="profiles-grid">
+        <!-- Placeholder avatars; swap with real photos if you want -->
+        <div class="profile-card">
+          <div class="profile-avatar"></div>
+          <div class="profile-name">Alex</div>
+          <div class="profile-tag">HPDE – Intermediate</div>
+        </div>
+        <div class="profile-card">
+          <div class="profile-avatar"></div>
+          <div class="profile-name">Jordan</div>
+          <div class="profile-tag">Club Racer – Spec Miata</div>
+        </div>
+        <div class="profile-card">
+          <div class="profile-avatar"></div>
+          <div class="profile-name">Taylor</div>
+          <div class="profile-tag">Endurance – Team Coaching</div>
+        </div>
+        <div class="profile-card">
+          <div class="profile-avatar"></div>
+          <div class="profile-name">Sam</div>
+          <div class="profile-tag">Time Attack – Track Focused</div>
+        </div>
+        <div class="profile-card">
+          <div class="profile-avatar"></div>
+          <div class="profile-name">Casey</div>
+          <div class="profile-tag">New to HPDE</div>
+        </div>
+        <div class="profile-card">
+          <div class="profile-avatar"></div>
+          <div class="profile-name">Morgan</div>
+          <div class="profile-tag">Club Racer – GT Car</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Booking CTA -->
+    <section class="cta-band" id="booking">
+      <div class="cta-inner">
+        <div>
+          <h2>Book Your Coaching Session</h2>
+          <p>
+            Track time is expensive. Coaching turns it into progress. Share your next
+            event, experience level, and goals—and we’ll build a plan around you.
+          </p>
+        </div>
+        <div class="cta-actions">
+          <a href="#contact" class="btn btn-primary">Start a Conversation</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <div class="footer-inner">
+      <h3>Get in Touch</h3>
+      <p>
+        Ready to talk about your next event or program? Reach out with where you
+        drive, what you race, and how you’d like to improve.
+      </p>
+      <p>
+        Email:
+        <a href="mailto:dave@racecoach.net" class="footer-link">dave@racecoach.net</a>
+      </p>
+      <p class="footer-meta">
+        Austin, Texas • Available for coaching nationwide • +1 512.589.3187
+      </p>
+      <p class="footer-small">
+        © <span id="year"></span> RaceCoach.net. All rights reserved.
+      </p>
+    </div>
+  </footer>
+</div>
+
+<script>
+  // Simple year injection so you don't have to touch the footer every year.
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
