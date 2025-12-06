@@ -99,7 +99,8 @@
       flex-direction: column;
       justify-content: space-between;
       background-image:
-        linear-gradient(var(--color-hero-overlay), var(--color-hero-overlay)), url("images/rcdn-hero-7.jpg");
+        linear-gradient(var(--color-hero-overlay), var(--color-hero-overlay)),
+        url("images/rcdn-hero-7.jpg");
       background-size: cover;
       background-position: center;
     }
@@ -403,6 +404,7 @@
     .strip-text {
       font-family: "Montserrat", system-ui, sans-serif;
       font-weight: 600;
+      text-align: center;
     }
 
     /* Welcome section */
@@ -637,6 +639,68 @@
       margin-top: 0.15rem;
     }
 
+    /* Testimonials */
+
+    .testimonials {
+      background: var(--color-bg);
+    }
+
+    .testimonials-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.6rem;
+      margin-top: 1.8rem;
+    }
+
+    .testimonial-card {
+      background: #ffffff;
+      border-radius: var(--radius-card);
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
+      padding: 1.4rem 1.5rem 1.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .testimonial-quote {
+      font-size: 0.9rem;
+      color: var(--color-text-muted);
+      margin-bottom: 0.9rem;
+    }
+
+    .testimonial-name {
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .testimonial-meta {
+      font-size: 0.8rem;
+      color: var(--color-text-muted);
+    }
+
+    .philosophy-quote {
+      margin-top: 2.2rem;
+      padding: 1.4rem 1.5rem;
+      border-radius: var(--radius-card);
+      border: 1px dashed rgba(31, 41, 55, 0.25);
+      background: #fdfaf7;
+      font-size: 0.9rem;
+      color: #4b5563;
+    }
+
+    .philosophy-quote span {
+      display: block;
+      margin-top: 0.4rem;
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: #6b7280;
+    }
+
     /* CTA band */
 
     .cta-band {
@@ -787,7 +851,7 @@
   <div class="strip">
     <div class="strip-inner container">
       <span class="strip-label">Our Approach</span>
-      <span class="strip-text">Drive. Analyze. Elevate.</span>
+      <span class="strip-text">METHOD + PRACTICE + EVALUATION = IMPROVEMENT</span>
     </div>
   </div>
 
@@ -872,7 +936,8 @@
         </div>
         <div class="coach-photo-wrapper">
           <!-- Replace with real photo -->
-          <img src="images/dave-3.jpg" alt="Dave Scott">
+          <img src="images/dave-3.jpg"
+               alt="Coach Dave Scott" class="coach-photo" />
           <div class="coach-tag">Based in Austin, coaching nationwide</div>
         </div>
       </div>
@@ -982,6 +1047,47 @@
           <div class="profile-avatar"></div>
           <div class="profile-name">Morgan</div>
           <div class="profile-tag">Club Racer – GT Car</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials" id="testimonials">
+      <div class="testimonials-inner">
+        <div class="section-header" style="margin-bottom:1.8rem;">
+          <div class="section-kicker">What Drivers Say</div>
+          <h2 class="section-title">Proven Results, Lap After Lap</h2>
+          <p class="section-subtitle">
+            A few words from drivers who’ve trusted Dave to help them go faster, safer,
+            and more consistently.
+          </p>
+        </div>
+
+        <div class="testimonials-grid">
+          <article class="testimonial-card">
+            <p class="testimonial-quote">
+              “Make no mistake, Dave can pedal a car very well. He's as good as anyone
+              else I've been with and that includes some very good pros back home.”
+            </p>
+            <div class="testimonial-name">Patrick Garvan</div>
+            <div class="testimonial-meta">Driver – Australia</div>
+          </article>
+
+          <article class="testimonial-card">
+            <p class="testimonial-quote">
+              “Each and every time I’ve hired him I’ve come away with significant
+              improvements in my driving skills and in my lap times. I will continue
+              to hire him for coaching, and I never hesitate to recommend him to others.”
+            </p>
+            <div class="testimonial-name">Mike Globe</div>
+            <div class="testimonial-meta">Driver – USA</div>
+          </article>
+        </div>
+
+        <div class="philosophy-quote">
+          “It is not always possible to be the best, but it is always possible to
+          improve your own performance.”
+          <span>— Sir Jackie Stewart</span>
         </div>
       </div>
     </section>
