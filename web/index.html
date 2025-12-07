@@ -100,7 +100,7 @@
       justify-content: space-between;
       background-image:
         linear-gradient(var(--color-hero-overlay), var(--color-hero-overlay)),
-        url("images/rcdn-hero-7.jpg");
+        url("images/rcdn-hero-orange.jpg");
       background-size: cover;
       background-position: center;
     }
@@ -612,21 +612,28 @@
     }
 
     .profile-card {
-      background: #ffffff;
-      border-radius: 14px;
-      padding: 1rem 1rem 1.1rem;
-      text-align: center;
-      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
-    }
+	  background: #ffffff;
+	  border-radius: 14px;
+	  padding: 1rem 1rem 1.1rem;
+	  text-align: center;
+	  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+	}
 
-    .profile-avatar {
-      width: 72px;
-      height: 72px;
-      border-radius: 50%;
-      margin: 0 auto 0.7rem;
-      object-fit: cover;
-      background: #d4d4d8;
-    }
+	.profile-avatar {
+	  width: 72px;
+	  height: 72px;
+	  border-radius: 50%;
+	  margin: 0 auto 0.7rem;
+	  overflow: hidden;          /* crop image to the circle */
+	  background: #d4d4d8;       /* fallback bg while loading */
+	}
+
+	.profile-avatar img {
+	  width: 100%;
+	  height: 100%;
+	  object-fit: cover;         /* fills the circle cleanly */
+	  display: block;
+	}
 
     .profile-name {
       font-weight: 600;
@@ -815,7 +822,7 @@
             <div class="hero-meta">
               <span>HPDE • Club Racing • Race Weekends</span>
             </div>
-            <h1>Master the Track. Elevate Your Performance.</h1>
+            <h1><span style="color: #fffff;">Master the Track.</span> Elevate Your Performance.</h1>
             <p class="hero-subtitle">
               Precision. Speed. Strategy. One-on-one coaching that turns every
               session into measurable progress—whether you’re chasing your
@@ -861,7 +868,7 @@
       <div class="welcome-inner">
         <div class="section-header">
           <div class="section-kicker">Welcome to RaceCoach.net</div>
-          <h2 class="section-title">Where Champions Train</h2>
+          <h2 class="section-title">Professional Race Instruction</h2>
         </div>
         <div class="welcome-body">
           <p>
@@ -900,7 +907,10 @@
           </p>
         </div>
         <ul class="why-list">
+		  <li><strong>Starts Before You Arrive</strong> – Self-assessment, goals, and past video/data shape a custom plan.</li>
+		  <li><strong>Structured Session Curriculum</strong> – Coaching informed by years in pro and top-level club racing.</li>
           <li><strong>Pro-Level Experience</strong> – Coaching informed by years in pro and top-level club racing.</li>
+          <li><strong>Speed That Transfers Anywhere</strong> – Skills that work in any car, on any track, not just one circuit.</li>
           <li><strong>Customized Programs</strong> – Plans built around your goals, experience, and current lap data.</li>
           <li><strong>Data-Driven Improvement</strong> – Video and telemetry to prove you’re getting faster, not just feeling quicker.</li>
           <li><strong>Race-Proven Techniques</strong> – Braking, rotation, traffic management, and decision-making under pressure.</li>
@@ -936,7 +946,7 @@
         </div>
         <div class="coach-photo-wrapper">
           <!-- Replace with real photo -->
-          <img src="images/dave-3.jpg"
+          <img src="images/coach-1.png"
                alt="Coach Dave Scott" class="coach-photo" />
           <div class="coach-tag">Based in Austin, coaching nationwide</div>
         </div>
@@ -955,7 +965,7 @@
       </div>
       <div class="services-grid">
         <article class="service-card">
-          <div class="service-image" style="background-image:url('https://images.pexels.com/photos/1051074/pexels-photo-1051074.jpeg?auto=compress&cs=tinysrgb&w=1200');"></div>
+          <div class="service-image" style="background-image:url('images/track-day-coaching.png')"></div>
           <div class="service-content">
             <div class="service-title">Track Day Coaching</div>
             <p class="service-text">
@@ -967,7 +977,7 @@
         </article>
 
         <article class="service-card">
-          <div class="service-image" style="background-image:url('https://images.pexels.com/photos/210182/pexels-photo-210182.jpeg?auto=compress&cs=tinysrgb&w=1200');"></div>
+          <div class="service-image" style="background-image:url('images/race-weekend-support.png')"></div>
           <div class="service-content">
             <div class="service-title">Race Weekend Support</div>
             <p class="service-text">
@@ -979,7 +989,7 @@
         </article>
 
         <article class="service-card">
-          <div class="service-image" style="background-image:url('https://images.pexels.com/photos/1149137/pexels-photo-1149137.jpeg?auto=compress&cs=tinysrgb&w=1200');"></div>
+          <div class="service-image" style="background-image:url('images/performance-assistance.png');"></div>
           <div class="service-content">
             <div class="service-title">Performance Assessments</div>
             <p class="service-text">
@@ -992,7 +1002,7 @@
         </article>
 
         <article class="service-card">
-          <div class="service-image" style="background-image:url('https://images.pexels.com/photos/1181400/pexels-photo-1181400.jpeg?auto=compress&cs=tinysrgb&w=1200');"></div>
+          <div class="service-image" style="background-image:url('images/review.png');"></div>
           <div class="service-content">
             <div class="service-title">Telemetry &amp; Video Review</div>
             <p class="service-text">
@@ -1019,32 +1029,44 @@
       <div class="profiles-grid">
         <!-- Placeholder avatars; swap with real photos if you want -->
         <div class="profile-card">
-          <div class="profile-avatar"></div>
-          <div class="profile-name">Alex</div>
-          <div class="profile-tag">HPDE – Intermediate</div>
-        </div>
+		  <div class="profile-avatar">
+			<img src="images/driver-alex.jpg" alt="Alex – HPDE Intermediate">
+		  </div>
+		  <div class="profile-name">Alex</div>
+		  <div class="profile-tag">HPDE – Intermediate</div>
+		</div>
         <div class="profile-card">
-          <div class="profile-avatar"></div>
+		  <div class="profile-avatar">
+			<img src="images/driver-jordan.jpg" alt="Club Racer – Spec Miata">
+		  </div>
           <div class="profile-name">Jordan</div>
           <div class="profile-tag">Club Racer – Spec Miata</div>
         </div>
         <div class="profile-card">
-          <div class="profile-avatar"></div>
+		  <div class="profile-avatar">
+			<img src="images/driver-taylor.jpg" alt="Taylor – Endurance team coaching">
+		  </div>
           <div class="profile-name">Taylor</div>
           <div class="profile-tag">Endurance – Team Coaching</div>
         </div>
         <div class="profile-card">
-          <div class="profile-avatar"></div>
+		  <div class="profile-avatar">
+			<img src="images/driver-sam.jpg" alt="Sam – Time Attack – Track Focused">
+		  </div>
           <div class="profile-name">Sam</div>
           <div class="profile-tag">Time Attack – Track Focused</div>
         </div>
         <div class="profile-card">
-          <div class="profile-avatar"></div>
+		  <div class="profile-avatar">
+			<img src="images/driver-casey.jpg" alt="Casey – New to HPDE">
+		  </div>
           <div class="profile-name">Casey</div>
           <div class="profile-tag">New to HPDE</div>
         </div>
         <div class="profile-card">
-          <div class="profile-avatar"></div>
+		  <div class="profile-avatar">
+			<img src="images/driver-morgan.jpg" alt="Morgan – Club Racer – GT Car">
+		  </div>
           <div class="profile-name">Morgan</div>
           <div class="profile-tag">Club Racer – GT Car</div>
         </div>
@@ -1084,11 +1106,11 @@
           </article>
         </div>
 
-        <div class="philosophy-quote">
+        <!--<div class="philosophy-quote">
           “It is not always possible to be the best, but it is always possible to
           improve your own performance.”
           <span>— Sir Jackie Stewart</span>
-        </div>
+        </div>-->
       </div>
     </section>
 
