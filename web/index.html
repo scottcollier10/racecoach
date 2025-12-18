@@ -1073,12 +1073,12 @@
         setTimeout(() => firstLink && firstLink.focus(), 30);
       }
 
-      function closeMenu() {
+      function closeMenu(returnFocus = true) {
         mobileMenu.classList.remove("is-open");
         mobileMenu.setAttribute("aria-hidden", "true");
         navToggle.setAttribute("aria-expanded", "false");
         document.body.classList.remove("menu-open");
-        navToggle.focus();
+        if (returnFocus) navToggle.focus();
       }
 
       navToggle.addEventListener("click", () => {
@@ -1087,6 +1087,15 @@
       });
 
       closeEls.forEach((el) => el.addEventListener("click", closeMenu));
+
+      // Close after tapping a menu link (anchors, etc.)
+      const menuLinks = mobileMenu.querySelectorAll(".mobile-menu-links a");
+      menuLinks.forEach((a) => {
+        a.addEventListener("click", () => {
+          // Let the browser handle the anchor jump, then close without stealing scroll/focus.
+          setTimeout(() => closeMenu(false), 0);
+        });
+      });
 
       // Close on ESC
       document.addEventListener("keydown", (e) => {
