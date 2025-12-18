@@ -17,7 +17,7 @@
     :root {
       --color-bg: #f5f6f9;
       --color-bg-alt: #ffffff;
-      --color-hero-overlay: rgba(0, 0, 0, 0.30);
+      --color-hero-overlay: rgba(0, 0, 0, 0.40);
       --color-primary: #ff8a1f;
       --color-primary-dark: #e87409;
       --color-accent: #1f2733;
@@ -465,7 +465,56 @@
       border: 1px solid var(--color-border);
       color: var(--color-text-muted);
     }
+	  
+	/* Driver profiles */
 
+    .profiles {
+      background: var(--color-bg-alt);
+    }
+
+    .profiles-grid {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1.4rem;
+    }
+
+    .profile-card {
+	  background: #ffffff;
+	  border-radius: 14px;
+	  padding: 1rem 1rem 1.1rem;
+	  text-align: center;
+	  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+	}
+
+	.profile-avatar {
+	  width: 72px;
+	  height: 72px;
+	  border-radius: 50%;
+	  margin: 0 auto 0.7rem;
+	  overflow: hidden;          /* crop image to the circle */
+	  background: #d4d4d8;       /* fallback bg while loading */
+	}
+
+	.profile-avatar img {
+	  width: 100%;
+	  height: 100%;
+	  object-fit: cover;         /* fills the circle cleanly */
+	  display: block;
+	}
+
+    .profile-name {
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .profile-tag {
+      font-size: 0.8rem;
+      color: var(--color-text-muted);
+      margin-top: 0.15rem;
+    }
     /* Testimonials */
     .testimonials { background: var(--color-bg); }
     .testimonials-inner { max-width: var(--max-width); margin: 0 auto; padding: 0 1.5rem; }
@@ -920,6 +969,63 @@
             so improvement stacks across the whole team.
           </p>
           <span class="scenario-tag">teams</span>
+        </div>
+      </div>
+    </section>
+	  
+	  <!-- Driver profiles -->
+    <section class="profiles" id="profiles">
+      <div class="section-header">
+        <div class="section-kicker">Drivers We Work With</div>
+        <h2 class="section-title">From First HPDE to Podium Hunts</h2>
+        <p class="section-subtitle">
+          RaceCoach.net builds programs around where you are now—and where you want
+          to be next season.
+        </p>
+      </div>
+      <div class="profiles-grid">
+        <!-- Placeholder avatars; swap with real photos if you want -->
+        <div class="profile-card">
+		  <div class="profile-avatar">
+			<img src="images/driver-alex.jpg" alt="Alex – HPDE Intermediate">
+		  </div>
+		  <div class="profile-name">Alex</div>
+		  <div class="profile-tag">HPDE – Intermediate</div>
+		</div>
+        <div class="profile-card">
+		  <div class="profile-avatar">
+			<img src="images/driver-jordan.jpg" alt="Club Racer – Spec Miata">
+		  </div>
+          <div class="profile-name">Jordan</div>
+          <div class="profile-tag">Club Racer – Spec Miata</div>
+        </div>
+        <div class="profile-card">
+		  <div class="profile-avatar">
+			<img src="images/driver-taylor.jpg" alt="Taylor – Endurance team coaching">
+		  </div>
+          <div class="profile-name">Taylor</div>
+          <div class="profile-tag">Endurance – Team Coaching</div>
+        </div>
+        <div class="profile-card">
+		  <div class="profile-avatar">
+			<img src="images/driver-sam.jpg" alt="Sam – Time Attack – Track Focused">
+		  </div>
+          <div class="profile-name">Sam</div>
+          <div class="profile-tag">Time Attack – Track Focused</div>
+        </div>
+        <div class="profile-card">
+		  <div class="profile-avatar">
+			<img src="images/driver-casey.jpg" alt="Casey – New to HPDE">
+		  </div>
+          <div class="profile-name">Casey</div>
+          <div class="profile-tag">New to HPDE</div>
+        </div>
+        <div class="profile-card">
+		  <div class="profile-avatar">
+			<img src="images/driver-morgan.jpg" alt="Morgan – Club Racer – GT Car">
+		  </div>
+          <div class="profile-name">Morgan</div>
+          <div class="profile-tag">Club Racer – GT Car</div>
         </div>
       </div>
     </section>
