@@ -415,6 +415,18 @@
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 1.8rem;
     }
+
+    /* Tablet landscape: force 2x2 grid for Coaching Options on iPad horizontal */
+    @media (min-width: 900px) and (max-width: 1366px) and (orientation: landscape) and (pointer: coarse) {
+      .services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+    @media (min-width: 900px) and (max-width: 1180px) and (orientation: landscape) {
+      .services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
     .service-card {
       background: #ffffff;
       border-radius: var(--radius-card);
