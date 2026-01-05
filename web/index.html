@@ -75,7 +75,7 @@
 	}
 
 	.site-logo img {
-	  height: 75px;              /* desktop baseline */
+	  height: 65px;              /* desktop baseline */
 	  width: auto;
 	  max-width: 460px;          /* prevents overgrowth */
 	  object-fit: contain;
@@ -92,6 +92,34 @@
 	/* Mobile */
 	@media (max-width: 640px) {
 	  .site-logo img {
+		height: 34px;
+		max-width: 190px;
+	  }
+	}
+	  
+	  .site-logo-2 {
+	  display: flex;
+	  align-items: center;
+	}
+
+	.site-logo-2 img {
+	  height: 80px;              /* desktop baseline */
+	  width: auto;
+	  max-width: 460px;          /* prevents overgrowth */
+	  object-fit: contain;
+	}
+
+	/* Tablet */
+	@media (max-width: 1024px) {
+	  .site-logo-2 img {
+		height: 40px;
+		max-width: 230px;
+	  }
+	}
+
+	/* Mobile */
+	@media (max-width: 640px) {
+	  .site-logo-2 img {
 		height: 34px;
 		max-width: 190px;
 	  }
@@ -626,11 +654,11 @@
 			  <div class="nav">
 				<div class="nav-inner">
 				  <a href="/" class="site-logo">
-		  <img
-			src="images/logo_new.png"
-			alt="RaceCoach.net – Professional Race Driving Instruction"
-		  />
-		</a>
+				  <img
+					src="images/logo_2.png"
+					alt="RaceCoach.net – Professional Race Driving Instruction"
+				  />
+				</a>
 
           <nav class="nav-links" aria-label="Primary navigation">
             <a href="#services">Coaching Options</a>
@@ -695,11 +723,17 @@
               <span class="dot">•</span>
               <span>Remote video &amp; data review available</span>
             </div>
-			<!-- Dave Edit footnote 
+			<!-- Alt Logo-->
             <p class="hero-footnote">
-              Working draft: credentials and specific series highlights can be added after Dave’s review.
-            </p>
-			-->
+              Alternate Header logo.
+            <a href="/" class="site-logo-2">
+				  <img
+					src="images/logo_new.png"
+					alt="RaceCoach.net – Professional Race Driving Instruction"
+				  />
+				</a>
+			</p>
+
           </div>
 
           <aside class="hero-card">
