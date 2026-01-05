@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <title>Professional Race Driving Instruction | RaceCoach.net</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Pro-level race coaching for HPDE drivers and club racers. Track day coaching, telemetry & video review, and race weekend support. Based in Austin, TX. Coaching nationwide." />
+  <meta name="description" content="Pro-level race coaching for HPDE drivers and club racers. Track day coaching, telemetry & video review, and race weekend support. Coaching nationwide." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -68,6 +68,34 @@
 
     .nav { display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 1.5rem 0.75rem; }
     .nav-inner { max-width: var(--max-width); margin: 0 auto; display: flex; align-items: center; justify-content: space-between; width: 100%; }
+
+	 .site-logo {
+	  display: flex;
+	  align-items: center;
+	}
+
+	.site-logo img {
+	  height: 75px;              /* desktop baseline */
+	  width: auto;
+	  max-width: 460px;          /* prevents overgrowth */
+	  object-fit: contain;
+	}
+
+	/* Tablet */
+	@media (max-width: 1024px) {
+	  .site-logo img {
+		height: 40px;
+		max-width: 230px;
+	  }
+	}
+
+	/* Mobile */
+	@media (max-width: 640px) {
+	  .site-logo img {
+		height: 34px;
+		max-width: 190px;
+	  }
+	}
 
     .logo { display: flex; align-items: center; gap: 0.6rem; font-family: "Montserrat", system-ui, sans-serif; }
     .logo-mark {
@@ -369,7 +397,7 @@
     .coach-quote {
       border-left: 3px solid var(--color-primary);
       padding-left: 0.9rem;
-      margin-top: 0.6rem;
+      margin-top: 1.0rem;
       font-size: 0.9rem;
       color: var(--color-text);
     }
@@ -591,19 +619,18 @@
   </style>
 </head>
 
-<body>
-<div class="page">
-  <header id="top">
-    <div class="hero">
-      <div class="nav">
-        <div class="nav-inner">
-          <a href="#top" class="logo">
-            <div class="logo-mark"></div>
-            <div>
-              <div class="logo-text-main">RaceCoach.net</div>
-              <div class="logo-text-sub">Professional Race Driving Instruction</div>
-            </div>
-          </a>
+		<body>
+		<div class="page">
+		  <header id="top">
+			<div class="hero">
+			  <div class="nav">
+				<div class="nav-inner">
+				  <a href="/" class="site-logo">
+		  <img
+			src="images/logo_new.png"
+			alt="RaceCoach.net – Professional Race Driving Instruction"
+		  />
+		</a>
 
           <nav class="nav-links" aria-label="Primary navigation">
             <a href="#services">Coaching Options</a>
@@ -664,16 +691,15 @@
             </div>
 
             <div class="hero-trust">
-              <span>Based in Austin, TX</span>
-              <span class="dot">•</span>
-              <span>Coaching nationwide</span>
+              <span>Coaching nationwide (U.S. &amp; Canada)</span>
               <span class="dot">•</span>
               <span>Remote video &amp; data review available</span>
             </div>
-
+			<!-- Dave Edit footnote 
             <p class="hero-footnote">
               Working draft: credentials and specific series highlights can be added after Dave’s review.
             </p>
+			-->
           </div>
 
           <aside class="hero-card">
@@ -716,7 +742,7 @@
 
         <div class="welcome-body">
           <p>
-            RaceCoach.net is led by <strong>Dave Scott</strong>, a professional coach with real-world racing and instruction experience.
+            RaceCoach.net is led by <strong>Dave Scott</strong>, a professional coach with decades of real-world racing and instruction experience.
             Sessions are tailored to your car, your track, and your current skill gaps. You’ll leave each day with specific changes to make,
             plus a simple way to practice them.
           </p>
@@ -731,10 +757,10 @@
             <h3>Every coaching day is built around:</h3>
             <ul>
               <li>Pre-session goal setting based on your experience and event plan</li>
-              <li>On-track coaching (in-car where permitted, or via radio)</li>
+              <li>On-track coaching (in-car where permitted)</li>
               <li>Between-session debriefs that focus on one or two changes at a time</li>
               <li>Post-session video and/or telemetry review when available</li>
-              <li>Clear action items for your next event</li>
+              <li>Clear action items for your next session</li>
             </ul>
           </div>
         </div>
@@ -795,7 +821,7 @@
             </p>
             <ul class="service-details">
               <li><strong>Perfect for:</strong> HPDE (Novice to Advanced), track day regulars</li>
-              <li><strong>Format:</strong> Half-day or full-day at-track coaching</li>
+              <li><strong>Format:</strong> Single or multi-day at-track coaching</li>
               <li><strong>Includes:</strong> Goals, coaching, debriefs, video/data review (when available)</li>
             </ul>
             <a class="service-link" href="#booking">Check availability for your next event →</a>
@@ -903,23 +929,23 @@
         <div class="coach-text">
           <div class="section-kicker">About Dave</div>
           <h2 class="section-title" style="font-size:1.7rem;margin-bottom:0.7rem;">
-            Dave Scott – Founder &amp; Lead Coach
+            Dave Scott — Founder
           </h2>
 
           <p>
-            Dave coaches drivers across HPDE, time trial, and club racing with a straightforward approach:
-            find what’s costing you time, build the skill to fix it, and make it repeatable.
+            Dave coaches drivers across HPDE, time trial, and club racing including select pro and pro-am programs.
+            His approach is straightforward: identify what’s costing you time, build the skill to fix it, and make it repeatable.
           </p>
 
           <p>
-            This site copy is intentionally being tightened for clarity. Once Dave confirms final credentials,
-            series highlights, and measurable results, those details can be pulled forward even more.
+            With decades of real-world racing and instruction experience, Dave focuses on practical changes you can apply immediately —
+            and a structured practice plan that turns improvement into something you can reproduce on demand.
           </p>
 
           <div class="coach-highlights">
             <div>Professional and club racing background (series details available on request)</div>
             <div>Coaches both at-track and remotely via video/data review</div>
-            <div>Based in Austin, TX with nationwide travel for events</div>
+            <div>Coaching nationwide (U.S. &amp; Canada)</div>
           </div>
 
           <div class="coach-quote">
@@ -930,8 +956,8 @@
         </div>
 
         <div class="coach-photo-wrapper">
-          <img src="images/coach-1.png" alt="Coach Dave Scott" class="coach-photo" />
-          <div class="coach-tag">Austin, TX • Coaching nationwide</div>
+          <img src="images/dave-scott.jpg" alt="Coach Dave Scott" class="coach-photo" />
+          <div class="coach-tag">Coaching nationwide (U.S. &amp; Canada)</div>
         </div>
       </div>
     </section>
@@ -985,62 +1011,7 @@
       </div>
     </section>
 	  
-	  <!-- Driver profiles -->
-    <section class="profiles" id="profiles">
-      <div class="section-header">
-        <div class="section-kicker">Drivers We Work With</div>
-        <h2 class="section-title">From First HPDE to Podium Hunts</h2>
-        <p class="section-subtitle">
-          RaceCoach.net builds programs around where you are now—and where you want
-          to be next season.
-        </p>
-      </div>
-      <div class="profiles-grid">
-        <!-- Placeholder avatars; swap with real photos if you want -->
-        <div class="profile-card">
-		  <div class="profile-avatar">
-			<img src="images/driver-alex.jpg" alt="Alex – HPDE Intermediate">
-		  </div>
-		  <div class="profile-name">Alex</div>
-		  <div class="profile-tag">HPDE – Intermediate</div>
-		</div>
-        <div class="profile-card">
-		  <div class="profile-avatar">
-			<img src="images/driver-jordan.jpg" alt="Club Racer – Spec Miata">
-		  </div>
-          <div class="profile-name">Jordan</div>
-          <div class="profile-tag">Club Racer – Spec Miata</div>
-        </div>
-        <div class="profile-card">
-		  <div class="profile-avatar">
-			<img src="images/driver-taylor.jpg" alt="Taylor – Endurance team coaching">
-		  </div>
-          <div class="profile-name">Taylor</div>
-          <div class="profile-tag">Endurance – Team Coaching</div>
-        </div>
-        <div class="profile-card">
-		  <div class="profile-avatar">
-			<img src="images/driver-sam.jpg" alt="Sam – Time Attack – Track Focused">
-		  </div>
-          <div class="profile-name">Sam</div>
-          <div class="profile-tag">Time Attack – Track Focused</div>
-        </div>
-        <div class="profile-card">
-		  <div class="profile-avatar">
-			<img src="images/driver-casey.jpg" alt="Casey – New to HPDE">
-		  </div>
-          <div class="profile-name">Casey</div>
-          <div class="profile-tag">New to HPDE</div>
-        </div>
-        <div class="profile-card">
-		  <div class="profile-avatar">
-			<img src="images/driver-morgan.jpg" alt="Morgan – Club Racer – GT Car">
-		  </div>
-          <div class="profile-name">Morgan</div>
-          <div class="profile-tag">Club Racer – GT Car</div>
-        </div>
-      </div>
-    </section>
+	  
 
     <!-- Testimonials -->
     <section class="testimonials" id="testimonials">
@@ -1096,9 +1067,9 @@
           </details>
 
           <details class="faq-item">
-            <summary>Do you travel, or only coach in Austin?</summary>
+            <summary>At which track do you coach?</summary>
             <p>
-              Coaching is available nationwide for track days and race weekends. Remote review is also available between events.
+              Coaching is available nationwide (and Canada) for track days and race weekends. Remote review is also available between events.
             </p>
           </details>
 
@@ -1158,7 +1129,7 @@
         <a href="mailto:dave@racecoach.net" class="footer-link">dave@racecoach.net</a>
       </p>
       <p class="footer-meta">
-        Austin, Texas • Coaching nationwide • +1 512.589.3187
+        , Texas • Coaching nationwide • +1 512.589.3187
       </p>
       <p class="footer-small">
         © <span id="year"></span> RaceCoach.net. All rights reserved.
